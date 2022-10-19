@@ -15,8 +15,8 @@ To run from the command line, use `mvn spring-boot:run` and open [http://localho
 
 ## How it Works?
 
-- You need AWS DynamoDB and S3 services.
+- You need AWS DynamoDB and AWS S3 services.
 - Update the BackendService class with the credentials from the services above.
-- The application will search all the DynamoDB tables from the account provided, open a list with the tables.
+- The application will search all the DynamoDB tables from the account provided and open a UI containing a list with the DynamoDb tables.
 - The user choose the table and generates a CSV file.
-- The system then saves the CSV file on S3.
+- The system then saves the CSV file on AWS S3.
