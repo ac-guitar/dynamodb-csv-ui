@@ -14,8 +14,8 @@ import com.vaadin.flow.component.splitlayout.SplitLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.router.*;
-import main.service.BackendService;
 import main.model.TableDetails;
+import main.service.BackendService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @Route(value = "master-detail", layout = MainView.class)
@@ -142,7 +142,6 @@ public class MasterDetailView extends Div implements AfterNavigationObserver {
 
         // Lazy init of the grid items, happens only when we are sure the view will be
         // shown to the user
-        service.configure();
         employees.setItems(service.getTableList());
     }
 

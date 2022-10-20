@@ -1,19 +1,17 @@
 package main.service;
 
-import com.amazonaws.ClientConfiguration;
-import com.amazonaws.regions.Regions;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
-import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
 import com.amazonaws.services.dynamodbv2.document.DynamoDB;
 import com.amazonaws.services.dynamodbv2.document.Table;
 import com.amazonaws.services.dynamodbv2.document.TableCollection;
 import com.amazonaws.services.dynamodbv2.model.ListTablesResult;
 import com.amazonaws.services.s3.AmazonS3;
-import com.amazonaws.services.s3.AmazonS3ClientBuilder;
-import main.aws.AwsCredentialsProvider;
-import main.aws.AwsToCsv;
+import com.github.opendevl.JFlat;
 import main.model.TableDetails;
-import org.json.JSONObject;
+import org.json.JSONArray;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
@@ -24,48 +22,16 @@ import java.util.List;
 @Service
 public class BackendService {
 
-	private static AmazonDynamoDB dynamoDbClient;
-	private static DynamoDB dynamoDB = null;
-	private static JSONObject config = null;
-	private AmazonS3 s3client = null;
+	Logger logger = LoggerFactory.getLogger(BackendService.class);
 
-	private String accessKeyId = "ACCESSKEYID";
-	private String secretAccessKey = "SECRETACCESSKEY";
-	private String region = "REGION";
+	@Autowired
+	private AmazonDynamoDB dynamoDbClient;
 
-	public void configure() {
+	@Autowired
+	private DynamoDB dynamoDB;
 
-		try{
-
-			config = new JSONObject();
-			config.put("accessKeyId",accessKeyId);
-			config.put("secretAccessKey",secretAccessKey);
-			config.put("region",region);
-
-		} catch (Exception e){
-			e.printStackTrace();
-		}
-
-		AwsCredentialsProvider credentialsProvider = new AwsCredentialsProvider(accessKeyId, secretAccessKey, getAmazonRegion(region));
-
-		// this service is needed to analyse data
-		dynamoDbClient = AmazonDynamoDBClientBuilder.standard()
-				.withRegion(credentialsProvider.getRegion())
-				.withCredentials(credentialsProvider)
-				.withClientConfiguration(new ClientConfiguration().withRequestTimeout(50000))
-				.build();
-
-		// this service is needed to analyze the dynamodb
-		dynamoDB = new DynamoDB(dynamoDbClient);
-
-		// start S3
-		s3client = AmazonS3ClientBuilder
-				.standard()
-				.withCredentials(credentialsProvider)
-				.withRegion(Regions.EU_CENTRAL_1)
-				.build();
-
-	}
+	@Autowired
+	private AmazonS3 amazonS3;
 
 	public List<TableDetails> getTableList() {
 
@@ -90,15 +56,19 @@ public class BackendService {
 
 		try{
 
-			config.put("tableName", tableName);
-			AwsToCsv.createCsvFile(config, dynamoDbClient, columnName, value);
+			JSONArray jsonArray = AwsToCsv.createJson(tableName, dynamoDbClient, columnName, value);
 
+			logger.info("Total itens: " + jsonArray.length());
+
+			generateCsv(jsonArray, tableName);
+
+			logger.info("Generated CSV file.");
+
+			// Save file to S3
 			File file = new File(tableName.concat(".csv"));
-			s3client.putObject("awsdb-csv-export", tableName.concat(".csv"), file);
+			amazonS3.putObject("awsdb-csv-export", tableName.concat(".csv"), file);
 
-			if(file.exists()) {
-				file.deleteOnExit();
-			}
+			logger.info("Uploaded CSV to S3.");
 
 		} catch (Exception e){
 			e.printStackTrace();
@@ -106,61 +76,13 @@ public class BackendService {
 
 	}
 
-	public static Regions getAmazonRegion(String cloudRegion){
-
-		System.out.println("DynamoDbCon: getAmazonRegion");
-
-		Regions region = null;
-
-		switch(cloudRegion){
-
-			case "us-east-1" : region = com.amazonaws.regions.Regions.US_EAST_1;
-				break;
-
-			case "us-east-2" : region = com.amazonaws.regions.Regions.US_EAST_2;
-				break;
-
-			case "us-west-1" : region = com.amazonaws.regions.Regions.US_WEST_1;
-				break;
-
-			case "us-west-2" : region = com.amazonaws.regions.Regions.US_WEST_2;
-				break;
-
-			case "ca-central-1" : region = com.amazonaws.regions.Regions.CA_CENTRAL_1;
-				break;
-
-			case "eu-west-1" : region = com.amazonaws.regions.Regions.EU_WEST_1;
-				break;
-
-			case "eu-central-1" : region = com.amazonaws.regions.Regions.EU_CENTRAL_1;
-				break;
-
-			case "eu-west-2" : region = com.amazonaws.regions.Regions.EU_WEST_2;
-				break;
-
-			case "ap-northeast-1" : region = com.amazonaws.regions.Regions.AP_NORTHEAST_1;
-				break;
-
-			case "ap-northeast-2" : region = com.amazonaws.regions.Regions.AP_NORTHEAST_2;
-				break;
-
-			case "ap-southeast-1" : region = com.amazonaws.regions.Regions.AP_SOUTHEAST_1;
-				break;
-
-			case "ap-southeast-2" : region = com.amazonaws.regions.Regions.AP_SOUTHEAST_2;
-				break;
-
-			case "ap-south-1" : region = com.amazonaws.regions.Regions.AP_SOUTH_1;
-				break;
-
-			case "sa-east-1" : region = com.amazonaws.regions.Regions.SA_EAST_1;
-				break;
-
-			case "eu-north-1" : region = com.amazonaws.regions.Regions.EU_NORTH_1;
-
-		}
-
-		return region;
+	public void generateCsv(JSONArray jsonArray, String fileName) throws Exception {
+		// JFlat to create CSV files from JSON
+		JFlat flatMe = new JFlat(jsonArray.toString());
+		flatMe
+				.json2Sheet()
+				.headerSeparator(";")
+				.write2csv(fileName + ".csv");
 	}
 
 }

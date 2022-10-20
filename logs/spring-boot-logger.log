@@ -1,0 +1,130 @@
+2022-10-20 17:40:57,266 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Application on LAPTOP-R1DT3IJ0 with PID 10068 (C:\Users\Alvaro\IdeaProjects\dynamodb-csv-ui\target\classes started by Alvaro in C:\Users\Alvaro\IdeaProjects\dynamodb-csv-ui)
+2022-10-20 17:40:57,271 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2022-10-20 17:40:57,369 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-10-20 17:40:57,370 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-10-20 17:40:58,060 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-10-20 17:40:58,078 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 8ms. Found 0 repository interfaces.
+2022-10-20 17:40:58,662 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'dynamoDbConfig' of type [main.config.DynamoDbConfig$$EnhancerBySpringCGLIB$$64f3d7a5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-10-20 17:40:58,676 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'amazonAWSCredentials' of type [main.aws.AwsCredentialsProvider] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-10-20 17:40:59,492 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'amazonDynamoDB' of type [com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-10-20 17:40:59,517 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'dynamoDB-DynamoDBMapperConfig' of type [com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-10-20 17:40:59,835 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2022-10-20 17:40:59,861 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2022-10-20 17:40:59,862 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2022-10-20 17:40:59,863 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.27]
+2022-10-20 17:41:00,003 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2022-10-20 17:41:00,004 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 2633 ms
+2022-10-20 17:41:03,303 INFO com.vaadin.flow.spring.VaadinServletContextInitializer$DevModeServletContextListener [restartedMain] Search for subclasses and classes with annotations took 3 seconds
+2022-10-20 17:41:03,307 INFO com.vaadin.flow.server.startup.DevModeInitializer [restartedMain] Starting dev-mode updaters in C:\Users\Alvaro\IdeaProjects\dynamodb-csv-ui folder.
+2022-10-20 17:41:03,340 INFO com.vaadin.flow.server.frontend.scanner.FullDependenciesScanner [restartedMain] Visited 95 classes. Took 18 ms.
+2022-10-20 17:41:03,355 INFO com.vaadin.flow.server.frontend.TaskRunNpmInstall [restartedMain] Skipping `npm install`.
+2022-10-20 17:41:03,356 INFO com.vaadin.flow.server.frontend.TaskCopyFrontendFiles [restartedMain] Copying frontend resources from jar files ...
+2022-10-20 17:41:03,534 INFO com.vaadin.flow.server.frontend.TaskCopyFrontendFiles [restartedMain] Visited 12 resources. Took 178 ms.
+2022-10-20 17:41:03,541 WARN com.vaadin.flow.server.frontend.AbstractUpdateImports [restartedMain] Use the './' prefix for files in the 'C:\Users\Alvaro\IdeaProjects\dynamodb-csv-ui\frontend' folder: 'styles/views/masterdetail/master-detail-view.css', please update your annotations.
+2022-10-20 17:41:03,634 INFO com.vaadin.flow.server.frontend.AbstractUpdateImports [restartedMain] No js modules to update 'C:\Users\Alvaro\IdeaProjects\dynamodb-csv-ui\target\frontend\generated-flow-imports.js' file
+2022-10-20 17:41:04,218 INFO com.vaadin.flow.server.DevModeHandler [restartedMain] Starting webpack-dev-server, port: 57788 dir: C:\Users\Alvaro\IdeaProjects\dynamodb-csv-ui
+2022-10-20 17:41:04,227 INFO com.vaadin.flow.server.DevModeHandler [restartedMain] Running webpack to compile frontend resources. This may take a moment, please stand by...
+2022-10-20 17:41:40,502 INFO com.vaadin.flow.server.DevModeHandler [restartedMain] Webpack startup and compilation completed in 36283ms
+2022-10-20 17:41:40,973 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2022-10-20 17:41:41,199 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2022-10-20 17:41:41,366 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2022-10-20 17:41:41,399 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-20 17:41:41,405 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Application in 45.075 seconds (JVM running for 45.987)
+2022-10-20 17:44:20,137 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-20 17:44:20,139 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-2] Initializing Servlet 'dispatcherServlet'
+2022-10-20 17:44:20,155 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-2] Completed initialization in 15 ms
+2022-10-20 17:44:20,211 WARN com.vaadin.flow.server.DefaultDeploymentConfiguration [http-nio-8080-exec-1] 
+====================================================================
+Vaadin is running in DEBUG MODE.
+In order to run your application in production mode and disable debug features, you should enable it by setting the servlet init parameter productionMode to true.
+See https://vaadin.com/docs/v14/flow/production/tutorial-production-mode-basic.html for more information about the production mode.
+====================================================================
+2022-10-20 17:44:21,814 WARN org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-2] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [240] milliseconds.
+2022-10-20 17:44:21,814 WARN org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [193] milliseconds.
+2022-10-20 17:44:21,828 INFO com.vaadin.flow.spring.SpringInstantiator [http-nio-8080-exec-1] The number of beans implementing 'I18NProvider' is 0. Cannot use Spring beans for I18N, falling back to the default behavior
+2022-10-20 17:44:22,950 ERROR com.vaadin.flow.router.InternalServerError [http-nio-8080-exec-2] There was an exception while trying to navigate to ''
+com.amazonaws.services.dynamodbv2.model.AmazonDynamoDBException: The security token included in the request is invalid. (Service: AmazonDynamoDBv2; Status Code: 400; Error Code: UnrecognizedClientException; Request ID: 8Q65MPOHDHM6I3IH5OEL4FGF0JVV4KQNSO5AEMVJF66Q9ASUAAJG)
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.handleErrorResponse(AmazonHttpClient.java:1799)
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.handleServiceErrorResponse(AmazonHttpClient.java:1383)
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeOneRequest(AmazonHttpClient.java:1359)
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeHelper(AmazonHttpClient.java:1139)
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.doExecute(AmazonHttpClient.java:796)
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeWithTimer(AmazonHttpClient.java:764)
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.execute(AmazonHttpClient.java:738)
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.access$500(AmazonHttpClient.java:698)
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutionBuilderImpl.execute(AmazonHttpClient.java:680)
+	at com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:544)
+	at com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:524)
+	at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.doInvoke(AmazonDynamoDBClient.java:1738)
+	at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.invoke(AmazonDynamoDBClient.java:1714)
+	at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.listTables(AmazonDynamoDBClient.java:1222)
+	at com.amazonaws.services.dynamodbv2.document.internal.ListTablesCollection.firstPage(ListTablesCollection.java:46)
+	at com.amazonaws.services.dynamodbv2.document.internal.PageIterator.next(PageIterator.java:45)
+	at com.amazonaws.services.dynamodbv2.document.internal.IteratorSupport.nextResource(IteratorSupport.java:87)
+	at com.amazonaws.services.dynamodbv2.document.internal.IteratorSupport.hasNext(IteratorSupport.java:55)
+	at main.service.BackendService.getTableList(BackendService.java:47)
+	at main.view.MasterDetailView.afterNavigation(MasterDetailView.java:145)
+	at com.vaadin.flow.router.internal.AbstractNavigationStateRenderer.lambda$fireAfterNavigationListeners$2(AbstractNavigationStateRenderer.java:340)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+	at com.vaadin.flow.router.internal.AbstractNavigationStateRenderer.fireAfterNavigationListeners(AbstractNavigationStateRenderer.java:340)
+	at com.vaadin.flow.router.internal.AbstractNavigationStateRenderer.handle(AbstractNavigationStateRenderer.java:254)
+	at com.vaadin.flow.router.Router.handleNavigation(Router.java:223)
+	at com.vaadin.flow.router.Router.navigate(Router.java:194)
+	at com.vaadin.flow.router.Router.initializeUI(Router.java:92)
+	at com.vaadin.flow.server.BootstrapHandler.createAndInitUI(BootstrapHandler.java:1502)
+	at com.vaadin.flow.server.BootstrapHandler.synchronizedHandleRequest(BootstrapHandler.java:459)
+	at com.vaadin.flow.server.SynchronizedRequestHandler.handleRequest(SynchronizedRequestHandler.java:40)
+	at com.vaadin.flow.server.VaadinService.handleRequest(VaadinService.java:1540)
+	at com.vaadin.flow.server.VaadinServlet.service(VaadinServlet.java:247)
+	at com.vaadin.flow.spring.SpringServlet.service(SpringServlet.java:120)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:352)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
+	at org.springframework.web.servlet.mvc.ServletForwardingController.handleRequestInternal(ServletForwardingController.java:141)
+	at org.springframework.web.servlet.mvc.AbstractController.handleRequest(AbstractController.java:177)
+	at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:52)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1579)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2022-10-20 17:44:45,688 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
