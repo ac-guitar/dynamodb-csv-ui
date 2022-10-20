@@ -16,3 +16,10 @@ To run from the command line, use `mvn spring-boot:run` or execute Application.j
 - The application will search all the DynamoDB tables from the account provided and will open a UI containing a list with all tables.
 - The user choose the table and generates a CSV file.
 - The system then uploads the CSV file on AWS S3.
+
+## Technologies
+- Java
+- Spring Boot
+- Vaadin (UI)
+- DynamoDb
+- S3
