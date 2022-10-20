@@ -11,7 +11,6 @@ To run from the command line, use `mvn spring-boot:run` or execute Application.j
 - Export AWS DynamoDb table to a CSV file and upload it to AWS S3.
 
 ## How it Works?
-
 - You need AWS DynamoDB and AWS S3 services.
 - Update DynamoDbConfig/application.properties with the credentials from the services above.
 - The application will search all the DynamoDB tables from the account provided and will open a UI containing a list with all tables.
